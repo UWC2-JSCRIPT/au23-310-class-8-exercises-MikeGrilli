@@ -21,31 +21,30 @@ formEl.addEventListener('submit', function(e) {
     .then(res => res.json())
     .then(res => {
       const bookListArr = res.results.books
-      console.log(bookListArr)
-      // bookListArr.forEach(book => {
-
-      //   const container = document.querySelector('.container')
-      //   container.style.display = 'flex'
-      //   container.style.flexDirection = 'column'
+      for (let i = 0; i < 5; i++) {
+        const booksContainer = document.getElementById('books-container')
+        booksContainer.style.display = 'flex'
+        booksContainer.style.flexDirection = 'column'
         
-      //   const img = document.createElement('img')
-      //   img.src = book.book_image
-      //   img.style.width = '100%'
-      //   container.appendChild(img)
+        const img = document.createElement('img')
+        img.src = bookListArr[i].book_image
+        img.style.width = '15%'
+        booksContainer.appendChild(img)
 
-      //   const headline = document.createElement('h1')
-      //   headline.textContent = book.title
-      //   container.appendChild(headline)
+        const headline = document.createElement('h1')
+        headline.textContent = bookListArr.title
+        booksContainer.appendChild(headline)
 
-      //   const subhead = document.createElement('h4')
-      //   subhead.textContent = book.author
-      //   container.appendChild(subhead)
+        const subhead = document.createElement('h4')
+        subhead.textContent = bookListArr[i].author
+        booksContainer.appendChild(subhead)
 
-      //   const description = document.createElement('em')
-      //   description.textContent = book.description
-      //   container.appendChild(description)
-
-      // });
+        const description = document.createElement('em')
+        description.textContent = bookListArr[i].description
+        description.style.width = "50%"
+        description.style.marginBottom = '50px'
+        booksContainer.appendChild(description)
+      }
     })
     .catch(err => console.log(err))
 
