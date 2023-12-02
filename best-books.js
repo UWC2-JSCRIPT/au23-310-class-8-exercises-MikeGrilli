@@ -22,30 +22,30 @@ formEl.addEventListener('submit', function(e) {
     .then(res => {
       const bookListArr = res.results.books
       console.log(bookListArr)
-      bookListArr.forEach(book => {
+      // bookListArr.forEach(book => {
 
-        const container = document.querySelector('.container')
-        container.style.display = 'flex'
-        container.style.flexDirection = 'column'
+      //   const container = document.querySelector('.container')
+      //   container.style.display = 'flex'
+      //   container.style.flexDirection = 'column'
         
-        const img = document.createElement('img')
-        img.src = book.book_image
-        img.style.width = '100%'
-        container.appendChild(img)
+      //   const img = document.createElement('img')
+      //   img.src = book.book_image
+      //   img.style.width = '100%'
+      //   container.appendChild(img)
 
-        const headline = document.createElement('h1')
-        headline.textContent = book.title
-        container.appendChild(headline)
+      //   const headline = document.createElement('h1')
+      //   headline.textContent = book.title
+      //   container.appendChild(headline)
 
-        const subhead = document.createElement('h4')
-        subhead.textContent = book.author
-        container.appendChild(subhead)
+      //   const subhead = document.createElement('h4')
+      //   subhead.textContent = book.author
+      //   container.appendChild(subhead)
 
-        const description = document.createElement('em')
-        description.textContent = book.description
-        container.appendChild(description)
+      //   const description = document.createElement('em')
+      //   description.textContent = book.description
+      //   container.appendChild(description)
 
-      });
+      // });
     })
     .catch(err => console.log(err))
 
