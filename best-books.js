@@ -25,6 +25,8 @@ formEl.addEventListener('submit', function(e) {
       bookListArr.forEach(book => {
 
         const container = document.querySelector('.container')
+        container.style.display = 'flex'
+        container.style.flexDirection = 'column'
         
         const img = document.createElement('img')
         img.src = book.book_image
@@ -42,7 +44,6 @@ formEl.addEventListener('submit', function(e) {
         const description = document.createElement('em')
         description.textContent = book.description
         container.appendChild(description)
-        container.style.marginBottom = '`100px'
 
       });
     })
