@@ -1,14 +1,25 @@
 let myPromise = new Promise(function(resolve, reject) {
+  
   setTimeout(function() {
-    resolve();
-  }, 1000);
-});
+    const doMath = Math.random()
+    console.log(doMath)
+    
+    if(doMath > 0.5) {
+      resolve()
+    } else {
+      reject()
+    }
 
-myPromise
-  .then(function() {
-    return 99;
-  })
-  .then(function(number) {
-    console.log(number);
-  });
+  }, 1000);
+})
+
+.then(function() {
+  console.log('Passsed')
+ 
+})
+
+.catch(err => {
+  console.log('Rejected')
+  console.log(err)
+}) 
 
