@@ -6,7 +6,7 @@ let myPromise = new Promise(function(resolve, reject) {
     
     if(doMath > 0.5) {
       resolve()
-    } else {
+    } else if(doMath <= 0.5) {
       reject()
     }
 
